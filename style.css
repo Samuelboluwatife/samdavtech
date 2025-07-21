@@ -5,12 +5,12 @@ body{
 }
 header .header-container{
     width: 100%;
+    margin: 0 auto;
     display: flex;
-    position: fixed;
     background-color: white;
     justify-content: space-around;
     padding:15px;
-    z-index: 1000;
+    z-index:1;
 }
 .header-container .logo h1{
     font-size:24px;
@@ -59,12 +59,14 @@ header .header-container .navbar{
 
 
 /* banner section styling */
+.banner{
+     background-image: url(./images/file_00000000cbe4620abf4b45510f8d58bd.png);
+}
 .banner .banner-container{
-    background-image: url(./images/file_00000000cbe4620abf4b45510f8d58bd.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 300px;
-    padding: 100px 20px;
+    height: 350px;
+    padding:50px 20px;
 }
 .banner-container .text{
     padding: 80px 90px;
@@ -95,16 +97,14 @@ header .header-container .navbar{
     transform: scale(0.98);
 }
 /* keyframes styling */
-.slide-in{
+.slide-in{ 
     opacity: 0;
     transform: translateY(0);
     animation: slide-in 0.52s ease-in forwards;
     animation-delay:0.2s;
     max-width: 700px;
-    
-
 }
-@keyframes slide-in {
+@keyframes slide-in { 
     to {
         opacity: 1;
         transform: translateY(30px);
@@ -219,22 +219,22 @@ height: 450px;
     height: 550px;
     padding: 20px;
 }
+.form-container h1{
+ font-size: 20px;
+}
 form{
     padding:0px 30px;
 }
 .form-container input{
-    box-sizing: border-box;
     width: 400px;
     height: 40px;
-    outline: none;
+    margin-bottom: 20px;
 }
 label{
     font-weight: 700;
     color: #696969;
 }
-.form-container div{
-    margin-top: 30px;
-}
+
 .form-container textarea{
     width:400px;
     height: 80px;
@@ -284,20 +284,21 @@ label{
     display: flex;
     justify-content: space-around;
     padding: 60px;
-    height: 200px;
+    height: 100px;
+    background-color: #eef1ef;
 }
 .brands-container img{
-    width:200px;
-    height: 200px;
+    width:100px;
+    height: 100px;
 }
  #perkins{
-    width:300px;
-    height: 200px;
+    width:200px;
+    height: 100px;
 }
 
 .footer-container{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-evenly;
     padding-top: 100px;
     background-color: #162415;
     height: 100px;
@@ -313,4 +314,225 @@ footer a{
 i{
     color: white;
     margin-left: 10px;
+}
+
+
+/* responsiveness */
+@media (max-width:992px) {
+header .header-container .navbar{
+    display: none;
+}
+
+.header-container .logo h1{
+    font-size:14px;
+    font-weight:800;
+    letter-spacing: 2px;
+}
+header .header-container{
+    padding: 5px;
+}
+.hamburger{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    }
+.dropdown{
+        position: relative;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+    }
+.dropdown-content{
+        height: 170px;
+        display: none;
+        position: absolute;
+        background-color:white;
+        width:100px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        border-radius:5px;
+        z-index:1 ;
+        top:30px;
+        left:-30px;
+    }
+.dropdown-content a{
+        color: #32aa27;
+        text-decoration: none;
+        padding: 12px 16px;
+        display: block;
+    }
+.dropdown-content a:hover{
+        background-color: #696969;
+    }
+.dropdown:hover .dropdown-content{
+        transition: 0.9s ease-in;
+        display: block;
+    }
+.banner{
+     background-image: url(./images/file_00000000cbe4620abf4b45510f8d58bd.png);
+}
+.banner .banner-container{
+    width: 80%;
+    height: 200px;
+    padding:10px 10px;
+}
+.banner-container .text {
+    padding: 20px;
+}
+.banner-container .text h1{
+    font-size:26px;
+}
+.banner-container  a{
+    padding: 10px 20px;
+    font-size:12px;
+    font-weight:700;
+    border-radius: 5px;
+}
+.banner-container .text p{
+    font-size:10px;
+}
+.about-section{
+    margin-bottom: 20px;
+}
+.about-section .about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:10px;
+}
+.about-container .paragraph{
+    padding:10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width:300px;
+}
+.about-container .paragraph p{
+    font-size:12px;
+    color: grey;
+    line-height:26px;
+}
+.about-container .paragraph a{
+    font-size: 12px;
+}
+.about-container .image img{
+width: 200px;
+height: 200px;
+}
+.services-section .services-container{
+    padding: 20px;
+}
+.services-container .title h5{
+    font-size: 10px;
+    margin-bottom:10px;
+}
+.services-container .title h1{
+    font-size:16px;
+    margin: 0;
+    margin-bottom:10px;
+}
+.services-section .services-container .cards{
+    display: flex;
+    flex-direction: column;
+}
+.services-container #items{
+    width: 200px;
+    height: 160px;
+    box-shadow: -1px 10px 15px 6px rgba(213, 211, 211, 0.985);
+    border-radius: 5px;
+    margin-bottom:20px;
+}
+.services-container #items img{
+    width: 200px;
+    height: 100px;
+}
+.services-container #items a{
+   font-size: 12px;
+}
+.services-container #items p{
+  font-size: 11px;
+}
+.contact-section {
+    height: 300px;
+    margin: 30px 0px;
+}
+.contact-section .contact-container{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+.contact-container .form-container{
+    width: 200px;
+    height: 200px;
+    padding:10px;
+    margin-bottom: 30px;
+}
+.form-container h1{
+ font-size: 16px;
+ text-align: center;
+}
+.form-container label{
+ font-size: 10px;
+}
+.form-container input{
+    box-sizing:border-box;
+    width: 180px;
+    height: 20px;
+    margin-bottom:10px;
+    outline: none;
+}
+.form-container textarea{
+    width:180px;
+    height:30px;
+    box-sizing:border-box;
+}
+.contact-container button{
+    width: 180px;
+    height: 26px;
+    padding:5px;
+    margin-top: 10px;
+    font-size: 10px;
+    font-weight: 400;
+}
+.info{
+    display: none;
+}
+.brands .brands-container{
+    padding: 10px;
+    height:50px;
+    background-color: #eef1ef;
+}
+.brands-container img{
+    width:50px;
+    height:50px;
+}
+ #perkins{
+    width:50px;
+    height:30px;
+}
+footer{
+    width: 100%;
+}
+.footer-container{
+    padding: 20px;
+    height: 40px;
+}
+footer a{
+    font-size: 10px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+i{
+    color: white;
+    margin-left:20px;
+    width: 5px;
+    height: 5px;
+}
+}
+/* min widt 992px */
+@media (min-width:992px) {
+    .hamburger{
+        display: none;
+    }
+    .dropdown{
+        display: none;
+    }
 }
